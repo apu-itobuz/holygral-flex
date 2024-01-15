@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main_page">
+        <header class="page-header">
+          Header
+        </header>
+        <nav class="page-nav">
+          Nav
+        </nav>
+        <main class="page-main">
+          <article>
+          
+              <div>Article</div>
+           
+          </article>
+        </main>
+        <aside class="page-sidebar">
+          Aside
+        </aside>
+        <footer class="page-footer">
+          Footer
+        </footer>
+      </div>
+</body>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #e4e4e4;
+  padding: 5px;
+  height: 100vh;
+  margin: 0;
+}
+.main_page {
+  background: white;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
+  grid-template-rows: min-content min-content 1fr min-content;
+  gap: 1px;
+
+  > * {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    * {
+      grid-col6umn: 1 / -1 !important;
+      grid-row: auto !important;
+    }
+  }
+}
+
+.page-header {
+  grid-column: 1 / -1;
+  background: #ffcdd2;
+}
+
+.page-sidebar {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  background: #e1bee7;
+}
+.page-nav {
+  grid-column: 2 / 3;
+  background: #bbdefb;
+}
+.page-main {
+  grid-column: 2 / 3;
+  background: #dcedc8;
+}
+.page-footer {
+  grid-column: 1 / -1;
+  background: #ffecb3;
+}
+
+</style>
+</html>
